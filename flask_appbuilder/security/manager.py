@@ -2216,7 +2216,7 @@ class BaseSecurityManager(AbstractSecurityManager):
 
     def load_user(self, pk):
         user = self.get_user_by_id(int(pk))
-        if user is not None and user.is_active:
+        if user.is_active:
             return user
 
     def load_user_jwt(self, _jwt_header, jwt_data):
